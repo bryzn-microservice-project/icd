@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SeatResponse",
+  "type": "object",
+  "properties": {
+    "showtime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "seatNumber": {
+      "type": "string",
+      "description": "this will be a seat number with some number ex. A12"
+    },
+    "payment": {
+      "$ref": "payment-request.json"
+    },
+    "purchaseTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "CONFIRMED",
+        "CANCELLED",
+        "FAILED"
+      ]
+    }
+  },
+  "required": ["showtime", "seatNumber", "payment"]
+}

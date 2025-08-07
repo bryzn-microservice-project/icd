@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MovieTicket",
+  "type": "object",
+  "properties": {
+    "movieName": {
+      "type": "string",
+      "description": "name of the movie the customer is intended to watch"
+    },
+    "showtime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "seatNumber": {
+      "type": "string",
+      "description": "this will be a seat number with some number ex. A12"
+    },
+    "price": {
+      "type": "number",
+      "minimum": 3,
+      "description": "we do not believe in free"
+    },
+    "buyer": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "creditCard": {
+          "type": "string",
+          "pattern": "^[0-9]{13,19}$",
+          "description": "Credit card number without spaces or dashes"
+        },
+        "cvc": {
+          "type": "string",
+          "pattern": "^[0-9]{3,4}$",
+          "description": "Card verification code (3 or 4 digits)"
+        }
+      },
+      "required": ["name", "email", "creditCard", "cvc"]
+    }
+  },
+  "required": ["movieId", "showtime", "seatNumber", "price", "buyer"]
+}

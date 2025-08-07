@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PaymentRequest",
+  "type": "object",
+  "properties": {
+    "email": { "type": "string", "format": "email" },
+    "creditCard": {
+      "type": "string",
+      "pattern": "^[0-9]{13,19}$",
+      "description": "Credit card number without spaces or dashes"
+    },
+    "cvc": {
+      "type": "string",
+      "pattern": "^[0-9]{3,4}$",
+      "description": "Card verification code (3 or 4 digits)"
+    }
+  },
+  "required": ["email", "creditCard", "cvc"]
+}

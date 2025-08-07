@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LoginResponse",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "SUCCESSFUL",
+        "FAILED"
+      ]
+    },
+    "username": { "type": "string" }
+  },
+  "required": ["status", "username"]
+}
