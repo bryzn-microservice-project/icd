@@ -3,6 +3,8 @@
   "title": "SeatResponse",
   "type": "object",
   "properties": {
+    "topicName" : { "type": "string" },
+    "correlatorId" : { "type": "integer" },
     "showtime": {
       "type": "string",
       "format": "date-time"
@@ -27,5 +29,5 @@
       ]
     }
   },
-  "required": ["showtime", "seatNumber", "payment"]
+  "required": ["topicName", "correlatorId", "showtime", "seatNumber", "payment", "purchaseTime", "status"]
 }

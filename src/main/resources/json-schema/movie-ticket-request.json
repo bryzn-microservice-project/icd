@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MovieTicketRequest",
+  "type": "object",
+  "properties": {
+    "topicName" : { "type": "string" },
+    "ticketId" : { "type": "integer" },
+    "movieName": {
+      "type": "string",
+      "description": "name of the movie the customer is intended to watch"
+    },
+    "showtime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "seatNumber": {
+      "type": "string",
+      "description": "this will be a seat number with some number ex. A12"
+    },
+    "price": {
+      "type": "number",
+      "minimum": 3,
+      "multipleOf": 0.01,
+      "description": "we do not believe in free"
+    },
+    "account": {
+      "$ref": "account.json"
+    }
+  },
+  "required": ["topicName", "ticketId", "movieName", "showtime", "seatNumber", "price", "account"]
+}

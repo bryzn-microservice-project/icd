@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "PaymentRequest",
+  "title": "PaymentResponse",
   "type": "object",
   "properties": {
     "topicName" : { "type": "string" },
@@ -16,11 +16,13 @@
       "pattern": "^[0-9]{13,19}$",
       "description": "Credit card number without spaces or dashes"
     },
-    "cvc": {
+    "status": {
       "type": "string",
-      "pattern": "^[0-9]{3,4}$",
-      "description": "Card verification code (3 or 4 digits)"
+      "enum": [
+        "SUCCESSFUL",
+        "FAILED"
+      ]
     }
   },
-  "required": ["topicName", "correlatorId", "paymentAmount", "email", "creditCard", "cvc"]
+  "required": ["topicName", "correlatorId", "paymentAmount", "email", "creditCard", "status"]
 }

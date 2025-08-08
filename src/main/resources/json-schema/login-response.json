@@ -3,6 +3,8 @@
   "title": "LoginResponse",
   "type": "object",
   "properties": {
+    "topicName" : { "type": "string" },
+    "correlatorId" : { "type": "integer" },
     "status": {
       "type": "string",
       "enum": [
@@ -12,5 +14,5 @@
     },
     "username": { "type": "string" }
   },
-  "required": ["status", "username"]
+  "required": ["topicName", "correlatorId", "status", "username"]
 }

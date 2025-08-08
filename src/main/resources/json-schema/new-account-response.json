@@ -1,8 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "NewAccountRequest",
+  "title": "NewAccountResponse",
   "type": "object",
   "properties": {
+    "topicName" : { "type": "string" },
+    "correlatorId" : { "type": "integer" },
     "status": {
       "type": "string",
       "enum": [
@@ -12,5 +14,5 @@
     },
     "statusMessage": { "type": "string" }
   },
-  "required": [ "status", "statusMessage" ]
+  "required": ["topicName", "correlatorId", "status", "statusMessage"]
 }
