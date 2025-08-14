@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.annotation.processing.Generated;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 /**
@@ -32,6 +33,7 @@ public class SeatRequest {
      * (Required)
      * 
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
     private Date showtime;
     /**
      * this will be a seat number with some number ex. A12
