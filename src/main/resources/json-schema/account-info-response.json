@@ -1,12 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Account",
+  "title": "AccountInfoResponse",
   "type": "object",
   "properties": {
     "topicName" : { "type": "string" },
     "name": { "type": "string" },
     "email": { "type": "string", "format": "email" },
     "username": { "type": "string" },
+    "rewardPoints": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "The number of reward points the user has accumulated"
+    },
     "creditCard": {
       "type": "string",
       "pattern": "^[0-9]{13,19}$",
@@ -18,5 +23,5 @@
       "description": "Card verification code (3 or 4 digits)"
     }
   },
-  "required": ["topicName","name", "email"]
+  "required": ["topicName", "name", "email", "username"]
 }

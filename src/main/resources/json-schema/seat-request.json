@@ -5,6 +5,9 @@
   "properties": {
     "topicName" : { "type": "string" },
     "correlatorId" : { "type": "integer" },
+    "movieName": {
+      "type": "string"
+    },
     "showtime": {
       "type": "string",
       "format": "date-time"
@@ -12,10 +15,7 @@
     "seatNumber": {
       "type": "string",
       "description": "this will be a seat number with some number ex. A12"
-    },
-    "payment": {
-      "$ref": "payment-request.json"
     }
   },
-  "required": ["topicName", "correlatorId", "showtime", "seatNumber", "payment"]
+  "required": ["topicName", "correlatorId", "movieName", "showtime", "seatNumber"]
 }

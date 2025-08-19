@@ -24,8 +24,12 @@
       "description": "we do not believe in free"
     },
     "account": {
-      "$ref": "account.json"
+      "$ref": "account.json",
+      "description": "Account information of the user, optional might be a guest"
+    },
+    "payment": {
+      "$ref": "payment-request.json"
     }
   },
-  "required": ["topicName", "ticketId", "movieName", "showtime", "seatNumber", "price", "account"]
+  "required": ["topicName", "ticketId", "movieName", "showtime", "seatNumber", "price", "payment"]
 }

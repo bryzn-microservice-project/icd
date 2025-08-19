@@ -4,10 +4,29 @@
   "type": "object",
   "properties": {
     "topicName" : { "type": "string" },
-    "correlatorId" : { "type": "integer" },
-    "account": {
-      "$ref": "account.json"
+    "name": { "type": "string" },
+    "email": { "type": "string", "format": "email" },
+    "username": { "type": "string" },
+    "password": { 
+      "type": "string", 
+      "minLength": 5, 
+      "description": "Password must be at least 5 characters long"
+    },
+    "rewardPoints": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "The number of reward points the user has accumulated"
+    },
+    "creditCard": {
+      "type": "string",
+      "pattern": "^[0-9]{13,19}$",
+      "description": "Credit card number without spaces or dashes"
+    },
+    "cvc": {
+      "type": "string",
+      "pattern": "^[0-9]{3,4}$",
+      "description": "Card verification code (3 or 4 digits)"
     }
   },
-  "required": ["topicName", "correlatorId", "account"]
+  "required": ["topicName", "name", "email", "username", "password"]
 }
