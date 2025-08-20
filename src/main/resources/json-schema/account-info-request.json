@@ -4,11 +4,12 @@
   "type": "object",
   "properties": {
     "topicName": { "type": "string" },
+    "correlatorId": { "type": "integer" },
     "name": { "type": "string" },
     "email": { "type": "string", "format": "email" },
     "username": { "type": "string" }
   },
-  "required": ["topicName"],
+  "required": ["topicName", "correlatorId"],
   "description": "At least a name, email, or username must be provided to be searched",
   "anyOf": [
     { "required": ["name"] },

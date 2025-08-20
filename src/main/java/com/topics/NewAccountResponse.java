@@ -32,6 +32,12 @@ public class NewAccountResponse {
      * (Required)
      * 
      */
+    private String username;
+    /**
+     * 
+     * (Required)
+     * 
+     */
     private NewAccountResponse.Status status;
     /**
      * 
@@ -75,6 +81,24 @@ public class NewAccountResponse {
      */
     public void setCorrelatorId(Integer correlatorId) {
         this.correlatorId = correlatorId;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -133,6 +157,10 @@ public class NewAccountResponse {
         sb.append('=');
         sb.append(((this.correlatorId == null)?"<null>":this.correlatorId));
         sb.append(',');
+        sb.append("username");
+        sb.append('=');
+        sb.append(((this.username == null)?"<null>":this.username));
+        sb.append(',');
         sb.append("status");
         sb.append('=');
         sb.append(((this.status == null)?"<null>":this.status));
@@ -160,6 +188,7 @@ public class NewAccountResponse {
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
         result = ((result* 31)+((this.statusMessage == null)? 0 :this.statusMessage.hashCode()));
+        result = ((result* 31)+((this.username == null)? 0 :this.username.hashCode()));
         result = ((result* 31)+((this.status == null)? 0 :this.status.hashCode()));
         return result;
     }
@@ -173,7 +202,7 @@ public class NewAccountResponse {
             return false;
         }
         NewAccountResponse rhs = ((NewAccountResponse) other);
-        return ((((((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName)))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.statusMessage == rhs.statusMessage)||((this.statusMessage!= null)&&this.statusMessage.equals(rhs.statusMessage))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
+        return (((((((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName)))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.statusMessage == rhs.statusMessage)||((this.statusMessage!= null)&&this.statusMessage.equals(rhs.statusMessage))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
     }
 
     @Generated("jsonschema2pojo")

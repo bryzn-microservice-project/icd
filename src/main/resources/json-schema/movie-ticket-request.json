@@ -4,14 +4,10 @@
   "type": "object",
   "properties": {
     "topicName" : { "type": "string" },
+    "correlatorId" : { "type": "integer" },
     "ticketId" : { "type": "integer" },
-    "movieName": {
-      "type": "string",
-      "description": "name of the movie the customer is intended to watch"
-    },
-    "showtime": {
-      "type": "string",
-      "format": "date-time"
+    "movie": {
+      "$ref": "movie.json"
     },
     "seatNumber": {
       "type": "string",
@@ -23,13 +19,9 @@
       "multipleOf": 0.01,
       "description": "we do not believe in free"
     },
-    "account": {
-      "$ref": "account.json",
-      "description": "Account information of the user, optional might be a guest"
-    },
     "payment": {
       "$ref": "payment-request.json"
     }
   },
-  "required": ["topicName", "ticketId", "movieName", "showtime", "seatNumber", "price", "payment"]
+  "required": ["topicName", "correlatorId", "ticketId", "movie", "seatNumber", "price", "payment"]
 }

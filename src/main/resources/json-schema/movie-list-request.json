@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MovieListRequest",
+  "type": "object",
+  "properties": {
+    "topicName": { "type": "string" },
+    "correlatorId": { "type": "integer" },
+    "genre": {
+      "type": "string",
+      "enum": ["ACTION", "COMEDY", "DRAMA", "HORROR", "SCIFI", "ROMANCE", "THRILLER"],
+      "description": "Filter movies by genre"
+    },
+    "showTime": {
+      "type": "string",
+      "format": "date",
+      "description": "Filter movies by show date (YYYY-MM-DD)"
+    },
+    "movieName": {
+      "type": "string"
+    }
+  },
+  "required": ["topicName", "correlatorId"],
+  "oneOf": [
+    { "required": ["genre"] },
+    { "required": ["showTime"]},
+    {  "required": ["movieName"]}
+  ]
+}

@@ -1,5 +1,6 @@
 package com.topics;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -45,6 +46,12 @@ public class PaymentResponse {
      * 
      */
     private String creditCard;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    private Date timeStamp;
     /**
      * 
      * (Required)
@@ -148,6 +155,24 @@ public class PaymentResponse {
      * (Required)
      * 
      */
+    public Date getTimeStamp() {
+        return timeStamp;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public void setTimeStamp(Date timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
     public PaymentResponse.Status getStatus() {
         return status;
     }
@@ -193,6 +218,10 @@ public class PaymentResponse {
         sb.append('=');
         sb.append(((this.creditCard == null)?"<null>":this.creditCard));
         sb.append(',');
+        sb.append("timeStamp");
+        sb.append('=');
+        sb.append(((this.timeStamp == null)?"<null>":this.timeStamp));
+        sb.append(',');
         sb.append("status");
         sb.append('=');
         sb.append(((this.status == null)?"<null>":this.status));
@@ -212,6 +241,7 @@ public class PaymentResponse {
     @Override
     public int hashCode() {
         int result = 1;
+        result = ((result* 31)+((this.timeStamp == null)? 0 :this.timeStamp.hashCode()));
         result = ((result* 31)+((this.topicName == null)? 0 :this.topicName.hashCode()));
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
@@ -231,7 +261,7 @@ public class PaymentResponse {
             return false;
         }
         PaymentResponse rhs = ((PaymentResponse) other);
-        return ((((((((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName)))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.creditCard == rhs.creditCard)||((this.creditCard!= null)&&this.creditCard.equals(rhs.creditCard))))&&((this.paymentAmount == rhs.paymentAmount)||((this.paymentAmount!= null)&&this.paymentAmount.equals(rhs.paymentAmount))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
+        return (((((((((this.timeStamp == rhs.timeStamp)||((this.timeStamp!= null)&&this.timeStamp.equals(rhs.timeStamp)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.creditCard == rhs.creditCard)||((this.creditCard!= null)&&this.creditCard.equals(rhs.creditCard))))&&((this.paymentAmount == rhs.paymentAmount)||((this.paymentAmount!= null)&&this.paymentAmount.equals(rhs.paymentAmount))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
     }
 
     @Generated("jsonschema2pojo")

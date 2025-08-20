@@ -12,7 +12,11 @@
         "FAILED"
       ]
     },
-    "username": { "type": "string" }
+    "username": { "type": "string" },
+    "timeStamp": {
+      "type": "string",
+      "format": "date-time"
+    }
   },
-  "required": ["topicName", "correlatorId", "status", "username"]
+  "required": ["topicName", "correlatorId", "status", "username","timeStamp"]
 }

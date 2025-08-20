@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.annotation.processing.Generated;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 /**
@@ -29,12 +28,12 @@ public class SeatResponse {
      * 
      */
     private Integer correlatorId;
+    private String movieName;
     /**
      * 
      * (Required)
      * 
      */
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
     private Date showtime;
     /**
      * this will be a seat number with some number ex. A12
@@ -42,20 +41,6 @@ public class SeatResponse {
      * 
      */
     private String seatNumber;
-    /**
-     * PaymentRequest
-     * <p>
-     * 
-     * (Required)
-     * 
-     */
-    private PaymentRequest payment;
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    private Date purchaseTime;
     /**
      * 
      * (Required)
@@ -100,6 +85,14 @@ public class SeatResponse {
         this.correlatorId = correlatorId;
     }
 
+    public String getMovieName() {
+        return movieName;
+    }
+
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
+    }
+
     /**
      * 
      * (Required)
@@ -134,46 +127,6 @@ public class SeatResponse {
      */
     public void setSeatNumber(String seatNumber) {
         this.seatNumber = seatNumber;
-    }
-
-    /**
-     * PaymentRequest
-     * <p>
-     * 
-     * (Required)
-     * 
-     */
-    public PaymentRequest getPayment() {
-        return payment;
-    }
-
-    /**
-     * PaymentRequest
-     * <p>
-     * 
-     * (Required)
-     * 
-     */
-    public void setPayment(PaymentRequest payment) {
-        this.payment = payment;
-    }
-
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    public Date getPurchaseTime() {
-        return purchaseTime;
-    }
-
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    public void setPurchaseTime(Date purchaseTime) {
-        this.purchaseTime = purchaseTime;
     }
 
     /**
@@ -214,6 +167,10 @@ public class SeatResponse {
         sb.append('=');
         sb.append(((this.correlatorId == null)?"<null>":this.correlatorId));
         sb.append(',');
+        sb.append("movieName");
+        sb.append('=');
+        sb.append(((this.movieName == null)?"<null>":this.movieName));
+        sb.append(',');
         sb.append("showtime");
         sb.append('=');
         sb.append(((this.showtime == null)?"<null>":this.showtime));
@@ -221,14 +178,6 @@ public class SeatResponse {
         sb.append("seatNumber");
         sb.append('=');
         sb.append(((this.seatNumber == null)?"<null>":this.seatNumber));
-        sb.append(',');
-        sb.append("payment");
-        sb.append('=');
-        sb.append(((this.payment == null)?"<null>":this.payment));
-        sb.append(',');
-        sb.append("purchaseTime");
-        sb.append('=');
-        sb.append(((this.purchaseTime == null)?"<null>":this.purchaseTime));
         sb.append(',');
         sb.append("status");
         sb.append('=');
@@ -252,9 +201,8 @@ public class SeatResponse {
         result = ((result* 31)+((this.showtime == null)? 0 :this.showtime.hashCode()));
         result = ((result* 31)+((this.topicName == null)? 0 :this.topicName.hashCode()));
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
-        result = ((result* 31)+((this.payment == null)? 0 :this.payment.hashCode()));
-        result = ((result* 31)+((this.purchaseTime == null)? 0 :this.purchaseTime.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
+        result = ((result* 31)+((this.movieName == null)? 0 :this.movieName.hashCode()));
         result = ((result* 31)+((this.seatNumber == null)? 0 :this.seatNumber.hashCode()));
         result = ((result* 31)+((this.status == null)? 0 :this.status.hashCode()));
         return result;
@@ -269,7 +217,7 @@ public class SeatResponse {
             return false;
         }
         SeatResponse rhs = ((SeatResponse) other);
-        return (((((((((this.showtime == rhs.showtime)||((this.showtime!= null)&&this.showtime.equals(rhs.showtime)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.payment == rhs.payment)||((this.payment!= null)&&this.payment.equals(rhs.payment))))&&((this.purchaseTime == rhs.purchaseTime)||((this.purchaseTime!= null)&&this.purchaseTime.equals(rhs.purchaseTime))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.seatNumber == rhs.seatNumber)||((this.seatNumber!= null)&&this.seatNumber.equals(rhs.seatNumber))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
+        return ((((((((this.showtime == rhs.showtime)||((this.showtime!= null)&&this.showtime.equals(rhs.showtime)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.movieName == rhs.movieName)||((this.movieName!= null)&&this.movieName.equals(rhs.movieName))))&&((this.seatNumber == rhs.seatNumber)||((this.seatNumber!= null)&&this.seatNumber.equals(rhs.seatNumber))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
     }
 
     @Generated("jsonschema2pojo")

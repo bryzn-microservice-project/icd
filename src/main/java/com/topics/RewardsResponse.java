@@ -8,13 +8,13 @@ import javax.annotation.processing.Generated;
 
 
 /**
- * LoginResponse
+ * RewardsNotification
  * <p>
  * 
  * 
  */
 @Generated("jsonschema2pojo")
-public class LoginResponse {
+public class RewardsResponse {
 
     /**
      * 
@@ -33,13 +33,25 @@ public class LoginResponse {
      * (Required)
      * 
      */
-    private LoginResponse.Status status;
+    private String email;
     /**
      * 
      * (Required)
      * 
      */
     private String username;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    private Integer rewardPoints;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    private RewardsResponse.Application application;
     /**
      * 
      * (Required)
@@ -89,8 +101,8 @@ public class LoginResponse {
      * (Required)
      * 
      */
-    public LoginResponse.Status getStatus() {
-        return status;
+    public String getEmail() {
+        return email;
     }
 
     /**
@@ -98,8 +110,8 @@ public class LoginResponse {
      * (Required)
      * 
      */
-    public void setStatus(LoginResponse.Status status) {
-        this.status = status;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**
@@ -118,6 +130,42 @@ public class LoginResponse {
      */
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public Integer getRewardPoints() {
+        return rewardPoints;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public void setRewardPoints(Integer rewardPoints) {
+        this.rewardPoints = rewardPoints;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public RewardsResponse.Application getApplication() {
+        return application;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public void setApplication(RewardsResponse.Application application) {
+        this.application = application;
     }
 
     /**
@@ -149,7 +197,7 @@ public class LoginResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(LoginResponse.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(RewardsResponse.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("topicName");
         sb.append('=');
         sb.append(((this.topicName == null)?"<null>":this.topicName));
@@ -158,13 +206,21 @@ public class LoginResponse {
         sb.append('=');
         sb.append(((this.correlatorId == null)?"<null>":this.correlatorId));
         sb.append(',');
-        sb.append("status");
+        sb.append("email");
         sb.append('=');
-        sb.append(((this.status == null)?"<null>":this.status));
+        sb.append(((this.email == null)?"<null>":this.email));
         sb.append(',');
         sb.append("username");
         sb.append('=');
         sb.append(((this.username == null)?"<null>":this.username));
+        sb.append(',');
+        sb.append("rewardPoints");
+        sb.append('=');
+        sb.append(((this.rewardPoints == null)?"<null>":this.rewardPoints));
+        sb.append(',');
+        sb.append("application");
+        sb.append('=');
+        sb.append(((this.application == null)?"<null>":this.application));
         sb.append(',');
         sb.append("timeStamp");
         sb.append('=');
@@ -186,10 +242,12 @@ public class LoginResponse {
     public int hashCode() {
         int result = 1;
         result = ((result* 31)+((this.timeStamp == null)? 0 :this.timeStamp.hashCode()));
+        result = ((result* 31)+((this.application == null)? 0 :this.application.hashCode()));
         result = ((result* 31)+((this.topicName == null)? 0 :this.topicName.hashCode()));
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
-        result = ((result* 31)+((this.status == null)? 0 :this.status.hashCode()));
+        result = ((result* 31)+((this.rewardPoints == null)? 0 :this.rewardPoints.hashCode()));
+        result = ((result* 31)+((this.email == null)? 0 :this.email.hashCode()));
         result = ((result* 31)+((this.username == null)? 0 :this.username.hashCode()));
         return result;
     }
@@ -199,28 +257,28 @@ public class LoginResponse {
         if (other == this) {
             return true;
         }
-        if ((other instanceof LoginResponse) == false) {
+        if ((other instanceof RewardsResponse) == false) {
             return false;
         }
-        LoginResponse rhs = ((LoginResponse) other);
-        return (((((((this.timeStamp == rhs.timeStamp)||((this.timeStamp!= null)&&this.timeStamp.equals(rhs.timeStamp)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))));
+        RewardsResponse rhs = ((RewardsResponse) other);
+        return (((((((((this.timeStamp == rhs.timeStamp)||((this.timeStamp!= null)&&this.timeStamp.equals(rhs.timeStamp)))&&((this.application == rhs.application)||((this.application!= null)&&this.application.equals(rhs.application))))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.rewardPoints == rhs.rewardPoints)||((this.rewardPoints!= null)&&this.rewardPoints.equals(rhs.rewardPoints))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))));
     }
 
     @Generated("jsonschema2pojo")
-    public enum Status {
+    public enum Application {
 
-        SUCCESSFUL("SUCCESSFUL"),
+        SUCCESS("SUCCESS"),
         FAILED("FAILED");
         private final String value;
-        private final static Map<String, LoginResponse.Status> CONSTANTS = new HashMap<String, LoginResponse.Status>();
+        private final static Map<String, RewardsResponse.Application> CONSTANTS = new HashMap<String, RewardsResponse.Application>();
 
         static {
-            for (LoginResponse.Status c: values()) {
+            for (RewardsResponse.Application c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
 
-        Status(String value) {
+        Application(String value) {
             this.value = value;
         }
 
@@ -233,8 +291,8 @@ public class LoginResponse {
             return this.value;
         }
 
-        public static LoginResponse.Status fromValue(String value) {
-            LoginResponse.Status constant = CONSTANTS.get(value);
+        public static RewardsResponse.Application fromValue(String value) {
+            RewardsResponse.Application constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {

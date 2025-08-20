@@ -16,6 +16,10 @@
       "pattern": "^[0-9]{13,19}$",
       "description": "Credit card number without spaces or dashes"
     },
+    "timeStamp": {
+      "type": "string",
+      "format": "date-time"
+    },
     "status": {
       "type": "string",
       "enum": [
@@ -24,5 +28,5 @@
       ]
     }
   },
-  "required": ["topicName", "correlatorId", "paymentAmount", "email", "creditCard", "status"]
+  "required": ["topicName", "correlatorId", "paymentAmount", "email", "creditCard", "timeStamp", "status"]
 }

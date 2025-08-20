@@ -5,6 +5,7 @@
   "properties": {
     "topicName" : { "type": "string" },
     "correlatorId" : { "type": "integer" },
+    "username": { "type": "string" },
     "status": {
       "type": "string",
       "enum": [
@@ -14,5 +15,5 @@
     },
     "statusMessage": { "type": "string" }
   },
-  "required": ["topicName", "correlatorId", "status", "statusMessage"]
+  "required": ["topicName", "correlatorId", "username", "status", "statusMessage"]
 }

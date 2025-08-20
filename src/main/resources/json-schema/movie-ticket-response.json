@@ -3,20 +3,12 @@
   "title": "MovieTicketResponse",
   "type": "object",
   "properties": {
-    "topicName" : { "type": "string" },
-    "ticketId" : { "type": "integer" },
-    "movieName": {
-      "type": "string",
-      "description": "name of the movie the customer is intended to watch"
-    },
-    "showtime": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "seatNumber": {
-      "type": "string",
-      "description": "this will be a seat number with some number ex. A12"
+    "topicName": { "type": "string" },
+    "correlatorId" : { "type": "integer" },
+    "ticketId": { "type": "integer" },
+    "movie": {
+      "$ref": "movie.json"
     }
   },
-  "required": ["topicName", "ticketId", "movieName", "showtime", "seatNumber"]
+  "required": ["topicName", "correlatorId", "ticketId", "movie"]
 }

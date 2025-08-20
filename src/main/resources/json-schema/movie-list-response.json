@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MovieListResponse",
+  "type": "object",
+  "properties": {
+    "topicName": { "type": "string" },
+    "correlatorId": { "type": "integer" },
+    "movies": {
+      "type": "array",
+      "items": { "$ref": "movie.json" },
+      "minItems": 0
+    },
+    "timeStamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": ["topicName", "correlatorId", "movies", "timeStamp"]
+}

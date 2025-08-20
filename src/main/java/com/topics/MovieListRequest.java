@@ -1,6 +1,5 @@
 package com.topics;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -8,13 +7,13 @@ import javax.annotation.processing.Generated;
 
 
 /**
- * LoginResponse
+ * MovieListRequest
  * <p>
  * 
  * 
  */
 @Generated("jsonschema2pojo")
-public class LoginResponse {
+public class MovieListRequest {
 
     /**
      * 
@@ -29,23 +28,16 @@ public class LoginResponse {
      */
     private Integer correlatorId;
     /**
-     * 
-     * (Required)
+     * Filter movies by genre
      * 
      */
-    private LoginResponse.Status status;
+    private MovieListRequest.Genre genre;
     /**
-     * 
-     * (Required)
-     * 
-     */
-    private String username;
-    /**
-     * 
-     * (Required)
+     * Filter movies by show date (YYYY-MM-DD)
      * 
      */
-    private Date timeStamp;
+    private String showTime;
+    private String movieName;
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
@@ -85,57 +77,43 @@ public class LoginResponse {
     }
 
     /**
-     * 
-     * (Required)
+     * Filter movies by genre
      * 
      */
-    public LoginResponse.Status getStatus() {
-        return status;
+    public MovieListRequest.Genre getGenre() {
+        return genre;
     }
 
     /**
-     * 
-     * (Required)
+     * Filter movies by genre
      * 
      */
-    public void setStatus(LoginResponse.Status status) {
-        this.status = status;
+    public void setGenre(MovieListRequest.Genre genre) {
+        this.genre = genre;
     }
 
     /**
-     * 
-     * (Required)
+     * Filter movies by show date (YYYY-MM-DD)
      * 
      */
-    public String getUsername() {
-        return username;
+    public String getShowTime() {
+        return showTime;
     }
 
     /**
-     * 
-     * (Required)
+     * Filter movies by show date (YYYY-MM-DD)
      * 
      */
-    public void setUsername(String username) {
-        this.username = username;
+    public void setShowTime(String showTime) {
+        this.showTime = showTime;
     }
 
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    public Date getTimeStamp() {
-        return timeStamp;
+    public String getMovieName() {
+        return movieName;
     }
 
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    public void setTimeStamp(Date timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
     public Map<String, Object> getAdditionalProperties() {
@@ -149,7 +127,7 @@ public class LoginResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(LoginResponse.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(MovieListRequest.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("topicName");
         sb.append('=');
         sb.append(((this.topicName == null)?"<null>":this.topicName));
@@ -158,17 +136,17 @@ public class LoginResponse {
         sb.append('=');
         sb.append(((this.correlatorId == null)?"<null>":this.correlatorId));
         sb.append(',');
-        sb.append("status");
+        sb.append("genre");
         sb.append('=');
-        sb.append(((this.status == null)?"<null>":this.status));
+        sb.append(((this.genre == null)?"<null>":this.genre));
         sb.append(',');
-        sb.append("username");
+        sb.append("showTime");
         sb.append('=');
-        sb.append(((this.username == null)?"<null>":this.username));
+        sb.append(((this.showTime == null)?"<null>":this.showTime));
         sb.append(',');
-        sb.append("timeStamp");
+        sb.append("movieName");
         sb.append('=');
-        sb.append(((this.timeStamp == null)?"<null>":this.timeStamp));
+        sb.append(((this.movieName == null)?"<null>":this.movieName));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
@@ -185,12 +163,12 @@ public class LoginResponse {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.timeStamp == null)? 0 :this.timeStamp.hashCode()));
+        result = ((result* 31)+((this.genre == null)? 0 :this.genre.hashCode()));
         result = ((result* 31)+((this.topicName == null)? 0 :this.topicName.hashCode()));
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
-        result = ((result* 31)+((this.status == null)? 0 :this.status.hashCode()));
-        result = ((result* 31)+((this.username == null)? 0 :this.username.hashCode()));
+        result = ((result* 31)+((this.movieName == null)? 0 :this.movieName.hashCode()));
+        result = ((result* 31)+((this.showTime == null)? 0 :this.showTime.hashCode()));
         return result;
     }
 
@@ -199,28 +177,38 @@ public class LoginResponse {
         if (other == this) {
             return true;
         }
-        if ((other instanceof LoginResponse) == false) {
+        if ((other instanceof MovieListRequest) == false) {
             return false;
         }
-        LoginResponse rhs = ((LoginResponse) other);
-        return (((((((this.timeStamp == rhs.timeStamp)||((this.timeStamp!= null)&&this.timeStamp.equals(rhs.timeStamp)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))));
+        MovieListRequest rhs = ((MovieListRequest) other);
+        return (((((((this.genre == rhs.genre)||((this.genre!= null)&&this.genre.equals(rhs.genre)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.movieName == rhs.movieName)||((this.movieName!= null)&&this.movieName.equals(rhs.movieName))))&&((this.showTime == rhs.showTime)||((this.showTime!= null)&&this.showTime.equals(rhs.showTime))));
     }
 
-    @Generated("jsonschema2pojo")
-    public enum Status {
 
-        SUCCESSFUL("SUCCESSFUL"),
-        FAILED("FAILED");
+    /**
+     * Filter movies by genre
+     * 
+     */
+    @Generated("jsonschema2pojo")
+    public enum Genre {
+
+        ACTION("ACTION"),
+        COMEDY("COMEDY"),
+        DRAMA("DRAMA"),
+        HORROR("HORROR"),
+        SCIFI("SCIFI"),
+        ROMANCE("ROMANCE"),
+        THRILLER("THRILLER");
         private final String value;
-        private final static Map<String, LoginResponse.Status> CONSTANTS = new HashMap<String, LoginResponse.Status>();
+        private final static Map<String, MovieListRequest.Genre> CONSTANTS = new HashMap<String, MovieListRequest.Genre>();
 
         static {
-            for (LoginResponse.Status c: values()) {
+            for (MovieListRequest.Genre c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
 
-        Status(String value) {
+        Genre(String value) {
             this.value = value;
         }
 
@@ -233,8 +221,8 @@ public class LoginResponse {
             return this.value;
         }
 
-        public static LoginResponse.Status fromValue(String value) {
-            LoginResponse.Status constant = CONSTANTS.get(value);
+        public static MovieListRequest.Genre fromValue(String value) {
+            MovieListRequest.Genre constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {

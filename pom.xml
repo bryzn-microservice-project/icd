@@ -14,7 +14,7 @@
 
 	<groupId>com.ca.bryzn</groupId>
 	<artifactId>icd</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.7</version>
 	<name>icd</name>
 
 	<properties>
@@ -78,8 +78,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--
-			<plugin>
+			
+			<!-- <plugin>
 				<groupId>org.jsonschema2pojo</groupId>
 				<artifactId>jsonschema2pojo-maven-plugin</artifactId>
 				<version>1.2.2</version>
@@ -94,8 +94,8 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-			-->
+			</plugin> -->
+			
 		</plugins>
 	</build>
 </project>

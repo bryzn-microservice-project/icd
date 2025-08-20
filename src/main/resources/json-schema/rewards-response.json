@@ -11,7 +11,11 @@
     "application" : {
       "type": "string",
       "enum": ["SUCCESS", "FAILED"]
+    },
+    "timeStamp": {
+      "type": "string",
+      "format": "date-time"
     }
     },
-  "required": ["topicName", "correlatorId", "email", "password"]
+  "required": ["topicName", "correlatorId", "email", "username", "rewardPoints", "application", "timeStamp"]
 }

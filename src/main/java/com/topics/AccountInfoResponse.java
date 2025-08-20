@@ -6,13 +6,13 @@ import javax.annotation.processing.Generated;
 
 
 /**
- * NewAccountRequest
+ * AccountInfoResponse
  * <p>
  * 
  * 
  */
 @Generated("jsonschema2pojo")
-public class NewAccountRequest {
+public class AccountInfoResponse {
 
     /**
      * 
@@ -45,13 +45,8 @@ public class NewAccountRequest {
      */
     private String username;
     /**
-     * Password must be at least 5 characters long
-     * (Required)
-     * 
-     */
-    private String password;
-    /**
      * The number of reward points the user has accumulated
+     * (Required)
      * 
      */
     private Integer rewardPoints;
@@ -158,25 +153,8 @@ public class NewAccountRequest {
     }
 
     /**
-     * Password must be at least 5 characters long
-     * (Required)
-     * 
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * Password must be at least 5 characters long
-     * (Required)
-     * 
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    /**
      * The number of reward points the user has accumulated
+     * (Required)
      * 
      */
     public Integer getRewardPoints() {
@@ -185,6 +163,7 @@ public class NewAccountRequest {
 
     /**
      * The number of reward points the user has accumulated
+     * (Required)
      * 
      */
     public void setRewardPoints(Integer rewardPoints) {
@@ -234,7 +213,7 @@ public class NewAccountRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(NewAccountRequest.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(AccountInfoResponse.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("topicName");
         sb.append('=');
         sb.append(((this.topicName == null)?"<null>":this.topicName));
@@ -254,10 +233,6 @@ public class NewAccountRequest {
         sb.append("username");
         sb.append('=');
         sb.append(((this.username == null)?"<null>":this.username));
-        sb.append(',');
-        sb.append("password");
-        sb.append('=');
-        sb.append(((this.password == null)?"<null>":this.password));
         sb.append(',');
         sb.append("rewardPoints");
         sb.append('=');
@@ -287,7 +262,6 @@ public class NewAccountRequest {
     public int hashCode() {
         int result = 1;
         result = ((result* 31)+((this.cvc == null)? 0 :this.cvc.hashCode()));
-        result = ((result* 31)+((this.password == null)? 0 :this.password.hashCode()));
         result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
         result = ((result* 31)+((this.topicName == null)? 0 :this.topicName.hashCode()));
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
@@ -304,11 +278,11 @@ public class NewAccountRequest {
         if (other == this) {
             return true;
         }
-        if ((other instanceof NewAccountRequest) == false) {
+        if ((other instanceof AccountInfoResponse) == false) {
             return false;
         }
-        NewAccountRequest rhs = ((NewAccountRequest) other);
-        return (((((((((((this.cvc == rhs.cvc)||((this.cvc!= null)&&this.cvc.equals(rhs.cvc)))&&((this.password == rhs.password)||((this.password!= null)&&this.password.equals(rhs.password))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.rewardPoints == rhs.rewardPoints)||((this.rewardPoints!= null)&&this.rewardPoints.equals(rhs.rewardPoints))))&&((this.creditCard == rhs.creditCard)||((this.creditCard!= null)&&this.creditCard.equals(rhs.creditCard))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))));
+        AccountInfoResponse rhs = ((AccountInfoResponse) other);
+        return ((((((((((this.cvc == rhs.cvc)||((this.cvc!= null)&&this.cvc.equals(rhs.cvc)))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.rewardPoints == rhs.rewardPoints)||((this.rewardPoints!= null)&&this.rewardPoints.equals(rhs.rewardPoints))))&&((this.creditCard == rhs.creditCard)||((this.creditCard!= null)&&this.creditCard.equals(rhs.creditCard))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))));
     }
 
 }

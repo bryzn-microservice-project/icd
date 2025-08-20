@@ -4,6 +4,7 @@
   "type": "object",
   "properties": {
     "topicName" : { "type": "string" },
+    "correlatorId" : { "type": "integer" },
     "name": { "type": "string" },
     "email": { "type": "string", "format": "email" },
     "username": { "type": "string" },
@@ -28,5 +29,5 @@
       "description": "Card verification code (3 or 4 digits)"
     }
   },
-  "required": ["topicName", "name", "email", "username", "password"]
+  "required": ["topicName", "correlatorId", "name", "email", "username", "password"]
 }
