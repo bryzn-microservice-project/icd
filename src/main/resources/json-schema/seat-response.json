@@ -19,11 +19,16 @@
     "status": {
       "type": "string",
       "enum": [
-        "CONFIRMED",
+        "BOOKED",
         "CANCELLED",
-        "FAILED"
+        "FAILED",
+        "HOLDING"
       ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
     }
   },
-  "required": ["topicName", "correlatorId", "showtime", "seatNumber", "payment", "purchaseTime", "status"]
+  "required": ["topicName", "correlatorId", "showtime", "seatNumber", "status", "timestamp"]
 }

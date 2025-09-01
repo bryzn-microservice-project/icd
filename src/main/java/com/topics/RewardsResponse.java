@@ -6,9 +6,11 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.annotation.processing.Generated;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 /**
- * RewardsNotification
+ * RewardsResponse
  * <p>
  * 
  * 
@@ -57,7 +59,8 @@ public class RewardsResponse {
      * (Required)
      * 
      */
-    private Date timeStamp;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
+    private Date timestamp;
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
@@ -173,8 +176,8 @@ public class RewardsResponse {
      * (Required)
      * 
      */
-    public Date getTimeStamp() {
-        return timeStamp;
+    public Date getTimestamp() {
+        return timestamp;
     }
 
     /**
@@ -182,8 +185,8 @@ public class RewardsResponse {
      * (Required)
      * 
      */
-    public void setTimeStamp(Date timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
     public Map<String, Object> getAdditionalProperties() {
@@ -222,9 +225,9 @@ public class RewardsResponse {
         sb.append('=');
         sb.append(((this.application == null)?"<null>":this.application));
         sb.append(',');
-        sb.append("timeStamp");
+        sb.append("timestamp");
         sb.append('=');
-        sb.append(((this.timeStamp == null)?"<null>":this.timeStamp));
+        sb.append(((this.timestamp == null)?"<null>":this.timestamp));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
@@ -241,7 +244,6 @@ public class RewardsResponse {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.timeStamp == null)? 0 :this.timeStamp.hashCode()));
         result = ((result* 31)+((this.application == null)? 0 :this.application.hashCode()));
         result = ((result* 31)+((this.topicName == null)? 0 :this.topicName.hashCode()));
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
@@ -249,6 +251,7 @@ public class RewardsResponse {
         result = ((result* 31)+((this.rewardPoints == null)? 0 :this.rewardPoints.hashCode()));
         result = ((result* 31)+((this.email == null)? 0 :this.email.hashCode()));
         result = ((result* 31)+((this.username == null)? 0 :this.username.hashCode()));
+        result = ((result* 31)+((this.timestamp == null)? 0 :this.timestamp.hashCode()));
         return result;
     }
 
@@ -261,7 +264,7 @@ public class RewardsResponse {
             return false;
         }
         RewardsResponse rhs = ((RewardsResponse) other);
-        return (((((((((this.timeStamp == rhs.timeStamp)||((this.timeStamp!= null)&&this.timeStamp.equals(rhs.timeStamp)))&&((this.application == rhs.application)||((this.application!= null)&&this.application.equals(rhs.application))))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.rewardPoints == rhs.rewardPoints)||((this.rewardPoints!= null)&&this.rewardPoints.equals(rhs.rewardPoints))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))));
+        return (((((((((this.application == rhs.application)||((this.application!= null)&&this.application.equals(rhs.application)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.rewardPoints == rhs.rewardPoints)||((this.rewardPoints!= null)&&this.rewardPoints.equals(rhs.rewardPoints))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))))&&((this.timestamp == rhs.timestamp)||((this.timestamp!= null)&&this.timestamp.equals(rhs.timestamp))));
     }
 
     @Generated("jsonschema2pojo")

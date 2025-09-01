@@ -6,6 +6,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.annotation.processing.Generated;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 /**
  * SeatResponse
@@ -34,6 +36,7 @@ public class SeatResponse {
      * (Required)
      * 
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
     private Date showtime;
     /**
      * this will be a seat number with some number ex. A12
@@ -47,6 +50,13 @@ public class SeatResponse {
      * 
      */
     private SeatResponse.Status status;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
+    private Date timestamp;
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
@@ -147,6 +157,24 @@ public class SeatResponse {
         this.status = status;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
     }
@@ -183,6 +211,10 @@ public class SeatResponse {
         sb.append('=');
         sb.append(((this.status == null)?"<null>":this.status));
         sb.append(',');
+        sb.append("timestamp");
+        sb.append('=');
+        sb.append(((this.timestamp == null)?"<null>":this.timestamp));
+        sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
         sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
@@ -205,6 +237,7 @@ public class SeatResponse {
         result = ((result* 31)+((this.movieName == null)? 0 :this.movieName.hashCode()));
         result = ((result* 31)+((this.seatNumber == null)? 0 :this.seatNumber.hashCode()));
         result = ((result* 31)+((this.status == null)? 0 :this.status.hashCode()));
+        result = ((result* 31)+((this.timestamp == null)? 0 :this.timestamp.hashCode()));
         return result;
     }
 
@@ -217,15 +250,16 @@ public class SeatResponse {
             return false;
         }
         SeatResponse rhs = ((SeatResponse) other);
-        return ((((((((this.showtime == rhs.showtime)||((this.showtime!= null)&&this.showtime.equals(rhs.showtime)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.movieName == rhs.movieName)||((this.movieName!= null)&&this.movieName.equals(rhs.movieName))))&&((this.seatNumber == rhs.seatNumber)||((this.seatNumber!= null)&&this.seatNumber.equals(rhs.seatNumber))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
+        return (((((((((this.showtime == rhs.showtime)||((this.showtime!= null)&&this.showtime.equals(rhs.showtime)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.movieName == rhs.movieName)||((this.movieName!= null)&&this.movieName.equals(rhs.movieName))))&&((this.seatNumber == rhs.seatNumber)||((this.seatNumber!= null)&&this.seatNumber.equals(rhs.seatNumber))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))))&&((this.timestamp == rhs.timestamp)||((this.timestamp!= null)&&this.timestamp.equals(rhs.timestamp))));
     }
 
     @Generated("jsonschema2pojo")
     public enum Status {
 
-        CONFIRMED("CONFIRMED"),
+        BOOKED("BOOKED"),
         CANCELLED("CANCELLED"),
-        FAILED("FAILED");
+        FAILED("FAILED"),
+        HOLDING("HOLDING");
         private final String value;
         private final static Map<String, SeatResponse.Status> CONSTANTS = new HashMap<String, SeatResponse.Status>();
 

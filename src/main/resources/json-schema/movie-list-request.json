@@ -10,9 +10,14 @@
       "enum": ["ACTION", "COMEDY", "DRAMA", "HORROR", "SCIFI", "ROMANCE", "THRILLER"],
       "description": "Filter movies by genre"
     },
-    "showTime": {
+    "startingShowtime": {
       "type": "string",
-      "format": "date",
+      "format": "date-time",
+      "description": "Filter movies by show date (YYYY-MM-DD)"
+    },
+    "endingShowtime": {
+      "type": "string",
+      "format": "date-time",
       "description": "Filter movies by show date (YYYY-MM-DD)"
     },
     "movieName": {
@@ -22,7 +27,7 @@
   "required": ["topicName", "correlatorId"],
   "oneOf": [
     { "required": ["genre"] },
-    { "required": ["showTime"]},
+    { "required": ["showtime"]},
     {  "required": ["movieName"]}
   ]
 }

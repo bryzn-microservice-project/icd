@@ -40,6 +40,7 @@ public class MovieTicketResponse {
      * 
      */
     private Movie movie;
+    private String seatNumber;
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
@@ -116,6 +117,21 @@ public class MovieTicketResponse {
      */
     public void setMovie(Movie movie) {
         this.movie = movie;
+    }
+
+    public String getSeatNumber() {
+        return this.seatNumber;
+    }
+
+    /**
+     * Movie
+     * <p>
+     * 
+     * (Required)
+     * 
+     */
+    public void setSeatNumber(String seatNumber) {
+        this.seatNumber = seatNumber;
     }
 
     public Map<String, Object> getAdditionalProperties() {

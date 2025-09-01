@@ -13,10 +13,10 @@
       ]
     },
     "username": { "type": "string" },
-    "timeStamp": {
+    "timestamp": {
       "type": "string",
       "format": "date-time"
     }
   },
-  "required": ["topicName", "correlatorId", "status", "username","timeStamp"]
+  "required": ["topicName", "correlatorId", "status", "username","timestamp"]
 }

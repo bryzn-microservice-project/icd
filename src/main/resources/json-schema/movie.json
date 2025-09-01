@@ -10,6 +10,11 @@
     "showtime": {
       "type": "string",
       "format": "date-time"
+    },
+    "genre": {
+      "type": "string",
+      "enum": ["ACTION", "COMEDY", "DRAMA", "HORROR", "SCIFI", "ROMANCE", "THRILLER"],
+      "description": "Filter movies by genre"
     }
   },
   "required": ["movieName", "showtime"]

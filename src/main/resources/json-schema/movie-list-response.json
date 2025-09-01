@@ -10,10 +10,10 @@
       "items": { "$ref": "movie.json" },
       "minItems": 0
     },
-    "timeStamp": {
+    "timestamp": {
       "type": "string",
       "format": "date-time"
     }
   },
-  "required": ["topicName", "correlatorId", "movies", "timeStamp"]
+  "required": ["topicName", "correlatorId", "movies", "timestamp"]
 }

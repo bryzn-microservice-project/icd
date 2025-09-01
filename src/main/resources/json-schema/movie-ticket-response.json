@@ -8,7 +8,8 @@
     "ticketId": { "type": "integer" },
     "movie": {
       "$ref": "movie.json"
-    }
+    },
+    "seatNumber": { "type": "string" }
   },
-  "required": ["topicName", "correlatorId", "ticketId", "movie"]
+  "required": ["topicName", "correlatorId", "ticketId", "movie", "seatNumber"]
 }

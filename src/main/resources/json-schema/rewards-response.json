@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "RewardsNotification",
+  "title": "RewardsResponse",
   "type": "object",
   "properties": {
     "topicName" : { "type": "string" },
@@ -12,10 +12,10 @@
       "type": "string",
       "enum": ["SUCCESS", "FAILED"]
     },
-    "timeStamp": {
+    "timestamp": {
       "type": "string",
       "format": "date-time"
     }
     },
-  "required": ["topicName", "correlatorId", "email", "username", "rewardPoints", "application", "timeStamp"]
+  "required": ["topicName", "correlatorId", "email", "username", "rewardPoints", "application", "timestamp"]
 }

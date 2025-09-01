@@ -16,7 +16,7 @@
       "pattern": "^[0-9]{13,19}$",
       "description": "Credit card number without spaces or dashes"
     },
-    "timeStamp": {
+    "timestamp": {
       "type": "string",
       "format": "date-time"
     },
@@ -28,5 +28,5 @@
       ]
     }
   },
-  "required": ["topicName", "correlatorId", "paymentAmount", "email", "creditCard", "timeStamp", "status"]
+  "required": ["topicName", "correlatorId", "paymentAmount", "email", "creditCard", "timestamp", "status"]
 }
