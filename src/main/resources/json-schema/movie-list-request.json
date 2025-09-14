@@ -27,7 +27,7 @@
   "required": ["topicName", "correlatorId"],
   "oneOf": [
     { "required": ["genre"] },
-    { "required": ["showtime"]},
+    { "required": ["startingShowtime", "endingShowtime"] },
     {  "required": ["movieName"]}
   ]
 }
