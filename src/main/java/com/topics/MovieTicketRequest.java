@@ -27,12 +27,6 @@ public class MovieTicketRequest {
      */
     private Integer correlatorId;
     /**
-     * 
-     * (Required)
-     * 
-     */
-    private Integer ticketId;
-    /**
      * Movie
      * <p>
      * 
@@ -96,24 +90,6 @@ public class MovieTicketRequest {
      */
     public void setCorrelatorId(Integer correlatorId) {
         this.correlatorId = correlatorId;
-    }
-
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    public Integer getTicketId() {
-        return ticketId;
-    }
-
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    public void setTicketId(Integer ticketId) {
-        this.ticketId = ticketId;
     }
 
     /**
@@ -216,10 +192,6 @@ public class MovieTicketRequest {
         sb.append('=');
         sb.append(((this.correlatorId == null)?"<null>":this.correlatorId));
         sb.append(',');
-        sb.append("ticketId");
-        sb.append('=');
-        sb.append(((this.ticketId == null)?"<null>":this.ticketId));
-        sb.append(',');
         sb.append("movie");
         sb.append('=');
         sb.append(((this.movie == null)?"<null>":this.movie));
@@ -257,7 +229,6 @@ public class MovieTicketRequest {
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
         result = ((result* 31)+((this.payment == null)? 0 :this.payment.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
-        result = ((result* 31)+((this.ticketId == null)? 0 :this.ticketId.hashCode()));
         result = ((result* 31)+((this.seatNumber == null)? 0 :this.seatNumber.hashCode()));
         return result;
     }
@@ -271,7 +242,7 @@ public class MovieTicketRequest {
             return false;
         }
         MovieTicketRequest rhs = ((MovieTicketRequest) other);
-        return (((((((((this.movie == rhs.movie)||((this.movie!= null)&&this.movie.equals(rhs.movie)))&&((this.price == rhs.price)||((this.price!= null)&&this.price.equals(rhs.price))))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.payment == rhs.payment)||((this.payment!= null)&&this.payment.equals(rhs.payment))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.ticketId == rhs.ticketId)||((this.ticketId!= null)&&this.ticketId.equals(rhs.ticketId))))&&((this.seatNumber == rhs.seatNumber)||((this.seatNumber!= null)&&this.seatNumber.equals(rhs.seatNumber))));
+        return ((((((((this.movie == rhs.movie)||((this.movie!= null)&&this.movie.equals(rhs.movie)))&&((this.price == rhs.price)||((this.price!= null)&&this.price.equals(rhs.price))))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.payment == rhs.payment)||((this.payment!= null)&&this.payment.equals(rhs.payment))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.seatNumber == rhs.seatNumber)||((this.seatNumber!= null)&&this.seatNumber.equals(rhs.seatNumber))));
     }
 
 }

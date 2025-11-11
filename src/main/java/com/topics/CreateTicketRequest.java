@@ -1,20 +1,18 @@
 package com.topics;
 
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.annotation.processing.Generated;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 /**
- * SeatRequest
+ * MovieTicketRequest
  * <p>
  * 
  * 
  */
 @Generated("jsonschema2pojo")
-public class SeatRequest {
+public class CreateTicketRequest {
 
     /**
      * 
@@ -29,18 +27,13 @@ public class SeatRequest {
      */
     private Integer correlatorId;
     /**
+     * Movie
+     * <p>
      * 
      * (Required)
      * 
      */
-    private String movieName;
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
-    private Date showtime;
+    private Movie movie;
     /**
      * this will be a seat number with some number ex. A12
      * (Required)
@@ -86,39 +79,25 @@ public class SeatRequest {
     }
 
     /**
+     * Movie
+     * <p>
      * 
      * (Required)
      * 
      */
-    public String getMovieName() {
-        return movieName;
+    public Movie getMovie() {
+        return movie;
     }
 
     /**
+     * Movie
+     * <p>
      * 
      * (Required)
      * 
      */
-    public void setMovieName(String movieName) {
-        this.movieName = movieName;
-    }
-
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    public Date getShowtime() {
-        return showtime;
-    }
-
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    public void setShowtime(Date showtime) {
-        this.showtime = showtime;
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 
     /**
@@ -150,7 +129,7 @@ public class SeatRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(SeatRequest.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(CreateTicketRequest.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("topicName");
         sb.append('=');
         sb.append(((this.topicName == null)?"<null>":this.topicName));
@@ -159,13 +138,9 @@ public class SeatRequest {
         sb.append('=');
         sb.append(((this.correlatorId == null)?"<null>":this.correlatorId));
         sb.append(',');
-        sb.append("movieName");
+        sb.append("movie");
         sb.append('=');
-        sb.append(((this.movieName == null)?"<null>":this.movieName));
-        sb.append(',');
-        sb.append("showtime");
-        sb.append('=');
-        sb.append(((this.showtime == null)?"<null>":this.showtime));
+        sb.append(((this.movie == null)?"<null>":this.movie));
         sb.append(',');
         sb.append("seatNumber");
         sb.append('=');
@@ -189,8 +164,7 @@ public class SeatRequest {
         result = ((result* 31)+((this.topicName == null)? 0 :this.topicName.hashCode()));
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
-        result = ((result* 31)+((this.movieName == null)? 0 :this.movieName.hashCode()));
-        result = ((result* 31)+((this.showtime == null)? 0 :this.showtime.hashCode()));
+        result = ((result* 31)+((this.movie == null)? 0 :this.movie.hashCode()));
         result = ((result* 31)+((this.seatNumber == null)? 0 :this.seatNumber.hashCode()));
         return result;
     }
@@ -200,11 +174,11 @@ public class SeatRequest {
         if (other == this) {
             return true;
         }
-        if ((other instanceof SeatRequest) == false) {
+        if ((other instanceof CreateTicketRequest) == false) {
             return false;
         }
-        SeatRequest rhs = ((SeatRequest) other);
-        return (((((((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName)))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.movieName == rhs.movieName)||((this.movieName!= null)&&this.movieName.equals(rhs.movieName))))&&((this.showtime == rhs.showtime)||((this.showtime!= null)&&this.showtime.equals(rhs.showtime))))&&((this.seatNumber == rhs.seatNumber)||((this.seatNumber!= null)&&this.seatNumber.equals(rhs.seatNumber))));
+        CreateTicketRequest rhs = ((CreateTicketRequest) other);
+        return ((((((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName)))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.movie == rhs.movie)||((this.movie!= null)&&this.movie.equals(rhs.movie))))&&((this.seatNumber == rhs.seatNumber)||((this.seatNumber!= null)&&this.seatNumber.equals(rhs.seatNumber))));
     }
 
 }

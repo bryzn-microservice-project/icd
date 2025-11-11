@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.processing.Generated;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 /**
@@ -40,6 +41,7 @@ public class MovieListResponse {
      * (Required)
      * 
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
     private Date timestamp;
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -139,7 +141,7 @@ public class MovieListResponse {
         sb.append('=');
         sb.append(((this.movies == null)?"<null>":this.movies));
         sb.append(',');
-        sb.append("timeStamp");
+        sb.append("timestamp");
         sb.append('=');
         sb.append(((this.timestamp == null)?"<null>":this.timestamp));
         sb.append(',');
@@ -159,10 +161,10 @@ public class MovieListResponse {
     public int hashCode() {
         int result = 1;
         result = ((result* 31)+((this.movies == null)? 0 :this.movies.hashCode()));
-        result = ((result* 31)+((this.timestamp == null)? 0 :this.timestamp.hashCode()));
         result = ((result* 31)+((this.topicName == null)? 0 :this.topicName.hashCode()));
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
+        result = ((result* 31)+((this.timestamp == null)? 0 :this.timestamp.hashCode()));
         return result;
     }
 
@@ -175,7 +177,7 @@ public class MovieListResponse {
             return false;
         }
         MovieListResponse rhs = ((MovieListResponse) other);
-        return ((((((this.movies == rhs.movies)||((this.movies!= null)&&this.movies.equals(rhs.movies)))&&((this.timestamp == rhs.timestamp)||((this.timestamp!= null)&&this.timestamp.equals(rhs.timestamp))))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))));
+        return ((((((this.movies == rhs.movies)||((this.movies!= null)&&this.movies.equals(rhs.movies)))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.timestamp == rhs.timestamp)||((this.timestamp!= null)&&this.timestamp.equals(rhs.timestamp))));
     }
 
 }

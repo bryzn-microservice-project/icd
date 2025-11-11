@@ -6,8 +6,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.annotation.processing.Generated;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 
 /**
  * MovieListRequest
@@ -39,13 +37,11 @@ public class MovieListRequest {
      * Filter movies by show date (YYYY-MM-DD)
      * 
      */
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
     private Date startingShowtime;
     /**
      * Filter movies by show date (YYYY-MM-DD)
      * 
      */
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
     private Date endingShowtime;
     private String movieName;
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();

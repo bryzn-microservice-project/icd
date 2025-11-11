@@ -26,6 +26,10 @@ public class AccountInfoRequest {
      * 
      */
     private Integer correlatorId;
+    /**
+     * Name can either be a string or null
+     * 
+     */
     private String name;
     private String email;
     private String username;
@@ -67,10 +71,18 @@ public class AccountInfoRequest {
         this.correlatorId = correlatorId;
     }
 
+    /**
+     * Name can either be a string or null
+     * 
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Name can either be a string or null
+     * 
+     */
     public void setName(String name) {
         this.name = name;
     }

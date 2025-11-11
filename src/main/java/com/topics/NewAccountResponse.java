@@ -1,9 +1,11 @@
 package com.topics;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.annotation.processing.Generated;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 /**
@@ -45,6 +47,13 @@ public class NewAccountResponse {
      * 
      */
     private String statusMessage;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
+    private Date timestamp;
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
@@ -137,6 +146,24 @@ public class NewAccountResponse {
         this.statusMessage = statusMessage;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
     }
@@ -169,6 +196,10 @@ public class NewAccountResponse {
         sb.append('=');
         sb.append(((this.statusMessage == null)?"<null>":this.statusMessage));
         sb.append(',');
+        sb.append("timestamp");
+        sb.append('=');
+        sb.append(((this.timestamp == null)?"<null>":this.timestamp));
+        sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
         sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
@@ -190,6 +221,7 @@ public class NewAccountResponse {
         result = ((result* 31)+((this.statusMessage == null)? 0 :this.statusMessage.hashCode()));
         result = ((result* 31)+((this.username == null)? 0 :this.username.hashCode()));
         result = ((result* 31)+((this.status == null)? 0 :this.status.hashCode()));
+        result = ((result* 31)+((this.timestamp == null)? 0 :this.timestamp.hashCode()));
         return result;
     }
 
@@ -202,7 +234,7 @@ public class NewAccountResponse {
             return false;
         }
         NewAccountResponse rhs = ((NewAccountResponse) other);
-        return (((((((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName)))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.statusMessage == rhs.statusMessage)||((this.statusMessage!= null)&&this.statusMessage.equals(rhs.statusMessage))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))));
+        return ((((((((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName)))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.statusMessage == rhs.statusMessage)||((this.statusMessage!= null)&&this.statusMessage.equals(rhs.statusMessage))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))))&&((this.status == rhs.status)||((this.status!= null)&&this.status.equals(rhs.status))))&&((this.timestamp == rhs.timestamp)||((this.timestamp!= null)&&this.timestamp.equals(rhs.timestamp))));
     }
 
     @Generated("jsonschema2pojo")

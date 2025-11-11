@@ -19,7 +19,9 @@ public enum SchemaService {
     REWARDS_REQUEST("RewardsRequest", "json-schema/rewards-request.json"),
     REWARDS_RESPONSE("RewardsResponse", "json-schema/rewards-response.json"),
     SEAT_REQUEST("SeatRequest", "json-schema/seat-request.json"),
-    SEAT_RESPONSE("SeatResponse", "json-schema/seat-response.json");
+    SEAT_RESPONSE("SeatResponse", "json-schema/seat-response.json"),
+    CREATE_TICKET_REQUEST("CreateTicketRequest", "json-schema/create-ticket-request.json"),
+    CREATE_TICKET_RESPONSE("CreateTicketResponse", "json-schema/create-ticket-response.json");
 
     private final String topicName;
     private final String jsonPath;

@@ -40,6 +40,11 @@ public class MovieTicketResponse {
      * 
      */
     private Movie movie;
+    /**
+     * 
+     * (Required)
+     * 
+     */
     private String seatNumber;
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -119,13 +124,16 @@ public class MovieTicketResponse {
         this.movie = movie;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     public String getSeatNumber() {
-        return this.seatNumber;
+        return seatNumber;
     }
 
     /**
-     * Movie
-     * <p>
      * 
      * (Required)
      * 
@@ -162,6 +170,10 @@ public class MovieTicketResponse {
         sb.append('=');
         sb.append(((this.movie == null)?"<null>":this.movie));
         sb.append(',');
+        sb.append("seatNumber");
+        sb.append('=');
+        sb.append(((this.seatNumber == null)?"<null>":this.seatNumber));
+        sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
         sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
@@ -182,6 +194,7 @@ public class MovieTicketResponse {
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
         result = ((result* 31)+((this.movie == null)? 0 :this.movie.hashCode()));
         result = ((result* 31)+((this.ticketId == null)? 0 :this.ticketId.hashCode()));
+        result = ((result* 31)+((this.seatNumber == null)? 0 :this.seatNumber.hashCode()));
         return result;
     }
 
@@ -194,7 +207,7 @@ public class MovieTicketResponse {
             return false;
         }
         MovieTicketResponse rhs = ((MovieTicketResponse) other);
-        return ((((((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName)))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.movie == rhs.movie)||((this.movie!= null)&&this.movie.equals(rhs.movie))))&&((this.ticketId == rhs.ticketId)||((this.ticketId!= null)&&this.ticketId.equals(rhs.ticketId))));
+        return (((((((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName)))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.movie == rhs.movie)||((this.movie!= null)&&this.movie.equals(rhs.movie))))&&((this.ticketId == rhs.ticketId)||((this.ticketId!= null)&&this.ticketId.equals(rhs.ticketId))))&&((this.seatNumber == rhs.seatNumber)||((this.seatNumber!= null)&&this.seatNumber.equals(rhs.seatNumber))));
     }
 
 }

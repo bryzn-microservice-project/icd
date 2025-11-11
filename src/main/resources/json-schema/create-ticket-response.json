@@ -1,26 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "MovieTicketRequest",
+  "title": "CreateTicketResponse",
   "type": "object",
   "properties": {
     "topicName" : { "type": "string" },
     "correlatorId" : { "type": "integer" },
+    "ticketId" : { "type": "integer" },
     "movie": {
       "$ref": "movie.json"
     },
     "seatNumber": {
       "type": "string",
       "description": "this will be a seat number with some number ex. A12"
-    },
-    "price": {
-      "type": "number",
-      "minimum": 3,
-      "multipleOf": 0.01,
-      "description": "we do not believe in free"
-    },
-    "payment": {
-      "$ref": "payment-request.json"
     }
   },
-  "required": ["topicName", "correlatorId", "movie", "seatNumber", "price", "payment"]
+  "required": ["topicName", "correlatorId", "ticketId", "movie", "seatNumber", "timestamp"]
 }

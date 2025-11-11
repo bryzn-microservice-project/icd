@@ -13,7 +13,11 @@
         "FAILED"
       ]
     },
-    "statusMessage": { "type": "string" }
+    "statusMessage": { "type": "string" },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
   },
-  "required": ["topicName", "correlatorId", "username", "status", "statusMessage"]
+  "required": ["topicName", "correlatorId", "username", "status", "statusMessage", "timestamp"]
 }

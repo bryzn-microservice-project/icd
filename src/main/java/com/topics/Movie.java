@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.annotation.processing.Generated;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 
