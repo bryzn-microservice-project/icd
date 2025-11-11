@@ -5,15 +5,24 @@
   "properties": {
     "topicName": { "type": "string" },
     "correlatorId": { "type": "integer" },
-    "name": { "type": "string" },
+    "name": { 
+      "type": ["string", "null"], 
+      "description": "Name can either be a string or null"
+    },
     "email": { "type": "string", "format": "email" },
     "username": { "type": "string" }
   },
   "required": ["topicName", "correlatorId"],
   "description": "At least a name, email, or username must be provided to be searched",
   "anyOf": [
-    { "required": ["name"] },
-    { "required": ["email"] },
-    { "required": ["username"] }
+    {
+      "required": ["name"]
+    },
+    {
+      "required": ["email"]
+    },
+    {
+      "required": ["username"]
+    }
   ]
 }

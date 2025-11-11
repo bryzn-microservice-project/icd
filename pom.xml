@@ -14,7 +14,7 @@
 
 	<groupId>com.ca.bryzn</groupId>
 	<artifactId>icd</artifactId>
-	<version>0.1.2</version>
+	<version>0.1.4</version>
 	<name>icd</name>
 
 	<properties>
