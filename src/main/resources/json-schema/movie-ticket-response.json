@@ -9,7 +9,10 @@
     "movie": {
       "$ref": "movie.json"
     },
-    "seatNumber": { "type": "string" }
+    "seatNumber": {
+       "type": "string",
+       "pattern": "^[A-Z]\\d{1,3}$"
+    }
   },
   "required": ["topicName", "correlatorId", "ticketId", "movie", "seatNumber"]
 }

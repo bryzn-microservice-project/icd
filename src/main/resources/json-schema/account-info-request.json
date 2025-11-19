@@ -10,7 +10,10 @@
       "description": "Name can either be a string or null"
     },
     "email": { "type": "string", "format": "email" },
-    "username": { "type": "string" }
+    "username": {
+        "type": ["string", "null"],
+        "minLength": 3
+    }
   },
   "required": ["topicName", "correlatorId"],
   "description": "At least a name, email, or username must be provided to be searched",

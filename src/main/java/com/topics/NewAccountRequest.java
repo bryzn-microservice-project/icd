@@ -51,11 +51,6 @@ public class NewAccountRequest {
      */
     private String password;
     /**
-     * The number of reward points the user has accumulated
-     * 
-     */
-    private Integer rewardPoints;
-    /**
      * Credit card number without spaces or dashes
      * 
      */
@@ -176,22 +171,6 @@ public class NewAccountRequest {
     }
 
     /**
-     * The number of reward points the user has accumulated
-     * 
-     */
-    public Integer getRewardPoints() {
-        return rewardPoints;
-    }
-
-    /**
-     * The number of reward points the user has accumulated
-     * 
-     */
-    public void setRewardPoints(Integer rewardPoints) {
-        this.rewardPoints = rewardPoints;
-    }
-
-    /**
      * Credit card number without spaces or dashes
      * 
      */
@@ -259,10 +238,6 @@ public class NewAccountRequest {
         sb.append('=');
         sb.append(((this.password == null)?"<null>":this.password));
         sb.append(',');
-        sb.append("rewardPoints");
-        sb.append('=');
-        sb.append(((this.rewardPoints == null)?"<null>":this.rewardPoints));
-        sb.append(',');
         sb.append("creditCard");
         sb.append('=');
         sb.append(((this.creditCard == null)?"<null>":this.creditCard));
@@ -292,7 +267,6 @@ public class NewAccountRequest {
         result = ((result* 31)+((this.topicName == null)? 0 :this.topicName.hashCode()));
         result = ((result* 31)+((this.correlatorId == null)? 0 :this.correlatorId.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
-        result = ((result* 31)+((this.rewardPoints == null)? 0 :this.rewardPoints.hashCode()));
         result = ((result* 31)+((this.creditCard == null)? 0 :this.creditCard.hashCode()));
         result = ((result* 31)+((this.email == null)? 0 :this.email.hashCode()));
         result = ((result* 31)+((this.username == null)? 0 :this.username.hashCode()));
@@ -308,7 +282,7 @@ public class NewAccountRequest {
             return false;
         }
         NewAccountRequest rhs = ((NewAccountRequest) other);
-        return (((((((((((this.cvc == rhs.cvc)||((this.cvc!= null)&&this.cvc.equals(rhs.cvc)))&&((this.password == rhs.password)||((this.password!= null)&&this.password.equals(rhs.password))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.rewardPoints == rhs.rewardPoints)||((this.rewardPoints!= null)&&this.rewardPoints.equals(rhs.rewardPoints))))&&((this.creditCard == rhs.creditCard)||((this.creditCard!= null)&&this.creditCard.equals(rhs.creditCard))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))));
+        return ((((((((((this.cvc == rhs.cvc)||((this.cvc!= null)&&this.cvc.equals(rhs.cvc)))&&((this.password == rhs.password)||((this.password!= null)&&this.password.equals(rhs.password))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.topicName == rhs.topicName)||((this.topicName!= null)&&this.topicName.equals(rhs.topicName))))&&((this.correlatorId == rhs.correlatorId)||((this.correlatorId!= null)&&this.correlatorId.equals(rhs.correlatorId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.creditCard == rhs.creditCard)||((this.creditCard!= null)&&this.creditCard.equals(rhs.creditCard))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))))&&((this.username == rhs.username)||((this.username!= null)&&this.username.equals(rhs.username))));
     }
 
 }

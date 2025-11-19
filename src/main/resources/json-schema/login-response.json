@@ -12,7 +12,10 @@
         "FAILED"
       ]
     },
-    "username": { "type": "string" },
+    "username": {
+        "type": ["string", "null"],
+        "minLength": 3
+    },
     "timestamp": {
       "type": "string",
       "format": "date-time"

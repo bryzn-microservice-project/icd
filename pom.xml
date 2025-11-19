@@ -14,7 +14,7 @@
 
 	<groupId>com.ca.bryzn</groupId>
 	<artifactId>icd</artifactId>
-	<version>0.1.5</version>
+	<version>0.1.9</version>
 	<name>icd</name>
 
 	<properties>
@@ -48,6 +48,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<!--IMPORTANT TO EXCLUSE PROBLEMS WITH ORG.JSON-->
+			<exclusions>
+				<exclusion>
+					<groupId>com.vaadin.external.google</groupId>
+					<artifactId>android-json</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 

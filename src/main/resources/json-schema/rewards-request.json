@@ -8,7 +8,10 @@
     "name": { "type": "string" },
     "email": { "type": "string", "format": "email" },
     "username": { "type": "string" },
-    "rewardPoints": { "type": "integer" },
+    "rewardPoints": { 
+      "type": "integer", 
+      "minimum": 0
+    },
     "application" : {
       "type": "string",
       "enum": ["REWARD_POINTS_ADDED", "REWARD_POINTS_REDEEMED"]

@@ -7,16 +7,14 @@
     "correlatorId" : { "type": "integer" },
     "name": { "type": "string" },
     "email": { "type": "string", "format": "email" },
-    "username": { "type": "string" },
+    "username": {
+        "type": ["string", "null"],
+        "minLength": 3
+    },
     "password": { 
       "type": "string", 
       "minLength": 5, 
       "description": "Password must be at least 5 characters long"
-    },
-    "rewardPoints": {
-      "type": "integer",
-      "minimum": 0,
-      "description": "The number of reward points the user has accumulated"
     },
     "creditCard": {
       "type": "string",

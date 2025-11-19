@@ -5,7 +5,10 @@
   "properties": {
     "topicName" : { "type": "string" },
     "correlatorId" : { "type": "integer" },
-    "username": { "type": "string" },
+    "username": {
+        "type": ["string", "null"],
+        "minLength": 3
+    },
     "status": {
       "type": "string",
       "enum": [
